@@ -8,6 +8,7 @@ import { AppState } from '../types/types'
 import { fetchData } from '../redux/actions/country'
 import CountryTable from '../components/CountryTable'
 import Loading from '../components/Loading'
+import PrimarySearchAppBar from '../components/NavBar'
 //const names = ['Apple', 'Orange', 'Avocado', 'Banana', 'Cucumber', 'Carrot']
 
 export default function Home() {
@@ -62,6 +63,7 @@ export default function Home() {
       <button onClick={handleAddProduct}>Add product</button>
       <Counter />
         */}
+      <PrimarySearchAppBar />
       {loading ? (
         <Loading />
       ) : (
