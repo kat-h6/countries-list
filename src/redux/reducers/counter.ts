@@ -1,4 +1,4 @@
-import { AddCounterAction, ADD_COUNTER, CounterState } from '../../types'
+import { AddCounterAction, ADD_COUNTER, CounterState } from '../../types/types'
 
 const initialState: CounterState = { count: 0 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import addCounter from '../redux/actions/counter'
-import { AppState } from '../types'
+import { AppState } from '../types/types'
 
 export default function Counter() {
   const count = useSelector((state: AppState) => state.counter.count)

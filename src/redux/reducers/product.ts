@@ -3,7 +3,7 @@ import {
   ProductActions,
   ADD_PRODUCT,
   REMOVE_PRODUCT,
-} from '../../types'
+} from '../../types/types'
 
 export default function product(
   state: ProductState = {
