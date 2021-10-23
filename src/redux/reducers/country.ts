@@ -24,12 +24,12 @@ export default function countries(
     return {
       loading: false,
       countries: [],
-      error: action.payload
+      error: action.payload.error
     }
   case FETCH_COUNTRIES_SUCCESS:
     return {
       loading: false,
-      countries: action.payload,
+      countries: action.payload.countries,
       error: ''
     }
   default:
