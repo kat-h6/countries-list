@@ -36,7 +36,7 @@ export type FetchCountriesSuccess = {
 export type CountryState = {
   countries: Country[]
   loading: boolean
-  error: unknown
+  error: any
 }
 
 export type CountryTableProps = {

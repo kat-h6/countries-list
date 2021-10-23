@@ -47,7 +47,6 @@ export default function Home() {
   if (error) return <div>Error handling data!</div>
   return (
     <>
-      <h1>Home page</h1>
       {/* {products.length <= 0 && <div>No products in cart</div>}
       <ul>
         {products.map((p) => (

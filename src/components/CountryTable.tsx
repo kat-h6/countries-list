@@ -5,6 +5,8 @@ import TableBody from '@mui/material/TableBody'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TablePagination from '@mui/material/TablePagination'
+import TableRow from '@mui/material/TableRow'
+import TableCell from '@mui/material/TableCell'
 
 import CountryRow from './CountryRow'
 import { Languages, CountryTableProps, Column } from '../types/country'
@@ -12,7 +14,7 @@ import { Languages, CountryTableProps, Column } from '../types/country'
 const columns: Column[] = [
   {
     id: 'flag',
-    label: 'flag',
+    label: 'Flag',
     minWidth: 170,
     format: (value: string) => (
       <img src={value} alt="flag" width="60" height="30" />
@@ -58,7 +60,19 @@ export default function CountryTable({
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 800 }}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead></TableHead>
+          <TableHead>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
           <TableBody>
             {countries
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
