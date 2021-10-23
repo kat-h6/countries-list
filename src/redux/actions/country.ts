@@ -7,7 +7,7 @@ import {
   FETCH_COUNTRIES_SUCCESS,
   FETCH_COUNTRIES_FAILURE,
   FetchCountriesFailure,
-} from '../../types/countryTypes'
+} from '../../types/country'
 
 export function fetchCountriesRequest(): FetchCountriesRequest {
   return {

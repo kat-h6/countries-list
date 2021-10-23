@@ -6,7 +6,7 @@ import {
   FETCH_COUNTRIES_SUCCESS,
   FetchCountriesFailure,
   FETCH_COUNTRIES_FAILURE,
-} from '../../types/countryTypes'
+} from '../../types/country'
 
 const initialState: CountryState = { loading: false, countries: [], error: '' }
 // prettier-ignore

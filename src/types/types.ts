@@ -1,4 +1,4 @@
-import { CountryState } from './countryTypes'
+import { CountryState } from './country'
 // Action types
 export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'

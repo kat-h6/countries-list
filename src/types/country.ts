@@ -14,6 +14,7 @@ export type Country = {
   region: string
 }
 
+// types for api request
 export type FetchCountriesRequest = {
   type: typeof FETCH_COUNTRIES_REQUEST
 }
@@ -36,4 +37,25 @@ export type CountryState = {
   countries: Country[]
   loading: boolean
   error: unknown
+}
+
+export type CountryTableProps = {
+  countries: Country[]
+  page: number
+  rowsPerPage: number
+  handleChangePage: (event: unknown, newPage: number) => void
+  handleChangeRowsPerPage: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export type Column = {
+  id: 'name' | 'flag' | 'population' | 'region' | 'languages'
+  label: string
+  minWidth?: number
+  align?: 'right'
+  format?: (value: any) => string | JSX.Element
+}
+
+export type CountryRowProps = {
+  columns: Column[]
+  country: Country
 }
