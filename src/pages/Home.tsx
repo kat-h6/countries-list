@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { Product, AppState } from '../types'
 import { addProduct, removeProduct } from '../redux/actions'
+import Counter from '../components/Counter'
+import { fetchData } from '../redux/actions/country'
 
 const names = ['Apple', 'Orange', 'Avocado', 'Banana', 'Cucumber', 'Carrot']
 
@@ -19,6 +21,10 @@ export default function Home() {
     }
     dispatch(addProduct(product))
   }
+
+  useEffect(() => {
+    dispatch(fetchData())
+  }, [dispatch])
 
   return (
     <>
@@ -36,6 +42,7 @@ export default function Home() {
         ))}
       </ul>
       <button onClick={handleAddProduct}>Add product</button>
+      <Counter />
     </>
   )
 }
