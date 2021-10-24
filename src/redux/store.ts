@@ -18,6 +18,9 @@ const initState: AppState = {
     loading: false,
     error: '',
   },
+  search: {
+    keyword: '',
+  },
 }
 
 export default function makeStore(initialState = initState) {

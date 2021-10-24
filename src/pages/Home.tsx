@@ -14,7 +14,13 @@ import PrimarySearchAppBar from '../components/NavBar'
 export default function Home() {
   const dispatch = useDispatch()
   //  const products = useSelector((state: AppState) => state.product.inCart)
-  const countries = useSelector((state: AppState) => state.countries.countries)
+  // prettier-ignore
+  const countries = useSelector((state: AppState) =>
+    state.search.keyword
+      ? state.countries.countries.filter((country) =>
+        country.name.toLowerCase().startsWith(state.search.keyword)
+      ) : state.countries.countries
+  )
   const error = useSelector((state: AppState) => state.countries.error)
   const loading = useSelector((state: AppState) => state.countries.loading)
   const [page, setPage] = React.useState(0)

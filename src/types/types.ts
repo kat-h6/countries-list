@@ -1,4 +1,5 @@
 import { CountryState } from './country'
+import { SearchState } from './search'
 // Action types
 export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
@@ -45,4 +46,5 @@ export type AppState = {
   product: ProductState
   counter: CounterState
   countries: CountryState
+  search: SearchState
 }
