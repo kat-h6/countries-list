@@ -15,7 +15,7 @@ const columns: Column[] = [
   {
     id: 'flag',
     label: 'Flag',
-    minWidth: 170,
+    minWidth: 150,
     format: (value: string) => (
       <img src={value} alt="flag" width="60" height="30" />
     ),
@@ -24,15 +24,15 @@ const columns: Column[] = [
   {
     id: 'population',
     label: 'Population',
-    minWidth: 170,
-    align: 'right',
+    minWidth: 150,
+    align: 'left',
     format: (value: number) => value.toLocaleString('en-US'),
   },
   {
     id: 'languages',
     label: 'Languages',
-    minWidth: 170,
-    align: 'right',
+    minWidth: 150,
+    align: 'left',
     format: (value: Languages[]) => (
       <ul>
         {value.map((l) => (
@@ -44,8 +44,8 @@ const columns: Column[] = [
   {
     id: 'region',
     label: 'Region',
-    minWidth: 170,
-    align: 'right',
+    minWidth: 150,
+    align: 'left',
   },
 ]
 

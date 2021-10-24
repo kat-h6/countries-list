@@ -51,7 +51,7 @@ export type Column = {
   id: 'name' | 'flag' | 'population' | 'region' | 'languages'
   label: string
   minWidth?: number
-  align?: 'right'
+  align?: 'right' | 'left'
   format?: (value: any) => string | JSX.Element
 }
 
