@@ -40,7 +40,7 @@ const columns: Column[] = [
       <List>
         {value.map((l) => (
           <ListItem disablePadding>
-            <ListItemText key={l.name} primary={l.name} />
+            <ListItemText sx={{ fontSize: 14 }} key={l.name} primary={l.name} />
           </ListItem>
         ))}
       </List>

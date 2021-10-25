@@ -15,10 +15,8 @@ export default function Home() {
   //  const products = useSelector((state: AppState) => state.product.inCart)
   // prettier-ignore
   const countries = useSelector((state: AppState) =>
-    state.search.keyword
-      ? state.countries.countries.filter((country) =>
-        country.name.toLowerCase().startsWith(state.search.keyword)
-      ) : state.countries.countries
+    state.countries.keyword
+      ? state.countries.filteredCountries : state.countries.countries
   )
   const error = useSelector((state: AppState) => state.countries.error)
   const loading = useSelector((state: AppState) => state.countries.loading)

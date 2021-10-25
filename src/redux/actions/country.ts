@@ -7,6 +7,8 @@ import {
   FETCH_COUNTRIES_SUCCESS,
   FETCH_COUNTRIES_FAILURE,
   FetchCountriesFailure,
+  FilterCountries,
+  FILTER_COUNTRIES,
 } from '../../types/country'
 
 export function fetchCountriesRequest(): FetchCountriesRequest {
@@ -31,6 +33,15 @@ export function fetchCountriesFailure(error: unknown): FetchCountriesFailure {
     type: FETCH_COUNTRIES_FAILURE,
     payload: {
       error,
+    },
+  }
+}
+
+export function filterCountries(keyword: string): FilterCountries {
+  return {
+    type: FILTER_COUNTRIES,
+    payload: {
+      keyword,
     },
   }
 }

@@ -1,6 +1,7 @@
 export const FETCH_COUNTRIES_REQUEST = 'FETCH_COUNTRIES'
 export const FETCH_COUNTRIES_SUCCESS = 'FETCH_COUNTRIES_SUCCESS'
 export const FETCH_COUNTRIES_FAILURE = 'FETCH_COUNTRIES_FAILURE'
+export const FILTER_COUNTRIES = 'FILTER_COUNTRIES'
 
 export type Languages = {
   name: string
@@ -33,10 +34,19 @@ export type FetchCountriesSuccess = {
   }
 }
 
+export type FilterCountries = {
+  type: typeof FILTER_COUNTRIES
+  payload: {
+    keyword: string
+  }
+}
+
 export type CountryState = {
   countries: Country[]
   loading: boolean
   error: any
+  keyword: string
+  filteredCountries: Country[]
 }
 
 export type CountryTableProps = {

@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import { styled, alpha } from '@mui/material/styles'
 import InputBase from '@mui/material/InputBase'
 import { useDispatch } from 'react-redux'
-import { searchCountries } from '../../redux/actions/search'
+import { filterCountries } from '../../redux/actions/country'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -49,7 +49,7 @@ export default function SearchBar() {
   const dispatch = useDispatch()
 
   const search = (value: string) => {
-    dispatch(searchCountries(value.toLowerCase()))
+    dispatch(filterCountries(value.toLowerCase()))
   }
 
   const handleUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {

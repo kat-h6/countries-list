@@ -11,4 +11,7 @@ export const customTheme = createTheme({
       contrastText: '#ffffff',
     },
   },
+  typography: {
+    fontSize: 14,
+  },
 })
