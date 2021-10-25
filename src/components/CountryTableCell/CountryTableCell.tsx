@@ -1,7 +1,7 @@
 import React from 'react'
 import TableCell from '@mui/material/TableCell'
 
-import { Column } from '../types/country'
+import { Column } from '../../types/country'
 
 type CountryTableCellProps = {
   column: Column

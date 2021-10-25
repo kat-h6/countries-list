@@ -8,8 +8,8 @@ import TablePagination from '@mui/material/TablePagination'
 import TableRow from '@mui/material/TableRow'
 import TableCell from '@mui/material/TableCell'
 
-import CountryRow from './CountryRow'
-import { Languages, CountryTableProps, Column } from '../types/country'
+import CountryRow from '../CountryRow/CountryRow'
+import { Languages, CountryTableProps, Column } from '../../types/country'
 
 const columns: Column[] = [
   {

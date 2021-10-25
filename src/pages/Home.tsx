@@ -6,9 +6,9 @@ import { AppState } from '../types/types'
 //import { addProduct, removeProduct } from '../redux/actions'
 //import Counter from '../components/Counter'
 import { fetchData } from '../redux/actions/country'
-import CountryTable from '../components/CountryTable'
-import Loading from '../components/Loading'
-import PrimarySearchAppBar from '../components/NavBar'
+import CountryTable from '../components/CountryTable/CountryTable'
+import Loading from '../components/Loading/Loading'
+import PrimarySearchAppBar from '../components/NavBar/NavBar'
 //const names = ['Apple', 'Orange', 'Avocado', 'Banana', 'Cucumber', 'Carrot']
 
 export default function Home() {

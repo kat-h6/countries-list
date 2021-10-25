@@ -1,9 +1,10 @@
 import React from 'react'
-
-import CountryTableCell from './CountryTableCell'
+import { TableCell } from '@mui/material'
 import TableRow from '@mui/material/TableRow'
-import { CountryRowProps } from '../types/country'
-import ContainedButtons from './Buttons'
+
+import CountryTableCell from '../CountryTableCell/CountryTableCell'
+import { CountryRowProps } from '../../types/country'
+import ContainedButtons from '../Buttons/Buttons'
 
 export default function CountryRow({ columns, country }: CountryRowProps) {
   return (
@@ -14,7 +15,9 @@ export default function CountryRow({ columns, country }: CountryRowProps) {
           <CountryTableCell key={column.id} column={column} value={value} />
         )
       })}
-      <ContainedButtons />
+      <TableCell>
+        <ContainedButtons name={country.name} />
+      </TableCell>
     </TableRow>
   )
 }
