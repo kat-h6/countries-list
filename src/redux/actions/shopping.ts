@@ -1,3 +1,4 @@
+import { Country } from '../../types/country'
 import {
   AddCountry,
   ADD_COUNTRY,
@@ -5,20 +6,20 @@ import {
   RemoveCountry,
 } from '../../types/shopping'
 
-export function addCountry(countryId: string): AddCountry {
+export function addCountry(country: Country): AddCountry {
   return {
     type: ADD_COUNTRY,
     payload: {
-      countryId,
+      country,
     },
   }
 }
 
-export function removeCountry(countryId: string): RemoveCountry {
+export function removeCountry(country: Country): RemoveCountry {
   return {
     type: REMOVE_COUNTRY,
     payload: {
-      countryId,
+      country,
     },
   }
 }

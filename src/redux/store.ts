@@ -10,9 +10,6 @@ const initState: AppState = {
   product: {
     inCart: [],
   },
-  counter: {
-    count: 0,
-  },
   countries: {
     countries: [],
     loading: false,
@@ -20,6 +17,9 @@ const initState: AppState = {
   },
   search: {
     keyword: '',
+  },
+  shopping: {
+    inCart: [],
   },
 }
 

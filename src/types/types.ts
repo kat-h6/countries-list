@@ -6,15 +6,6 @@ export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 export const ADD_COUNTER = 'ADD_COUNTER'
 
-// counter
-export type AddCounterAction = {
-  type: typeof ADD_COUNTER
-}
-
-export type CounterState = {
-  count: number
-}
-
 // A product
 export type Product = {
   id: string
@@ -45,8 +36,7 @@ export type ProductState = {
 
 export type AppState = {
   product: ProductState
-  counter: CounterState
   countries: CountryState
   search: SearchState
-  cart: CountryCartState
+  shopping: CountryCartState
 }

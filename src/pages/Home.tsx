@@ -4,12 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { AppState } from '../types/types'
 //import { addProduct, removeProduct } from '../redux/actions'
-//import Counter from '../components/Counter'
 import { fetchData } from '../redux/actions/country'
 import CountryTable from '../components/CountryTable/CountryTable'
 import Loading from '../components/Loading/Loading'
 import PrimarySearchAppBar from '../components/NavBar/NavBar'
-//const names = ['Apple', 'Orange', 'Avocado', 'Banana', 'Cucumber', 'Carrot']
+// import { Country } from '../types/country'
 
 export default function Home() {
   const dispatch = useDispatch()
@@ -26,12 +25,7 @@ export default function Home() {
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(10)
 
-  /*  const handleAddProduct = () => {
-    const product: Product = {
-      id: (+new Date()).toString(),
-      name: names[Math.floor(Math.random() * names.length)],
-      price: +(Math.random() * 10).toFixed(2),
-    }
+  /*  const handleAddCountry = () => {
     dispatch(addProduct(product))
   } */
 
@@ -67,7 +61,6 @@ export default function Home() {
         ))}
       </ul>
       <button onClick={handleAddProduct}>Add product</button>
-      <Counter />
         */}
       <PrimarySearchAppBar />
       {loading ? (

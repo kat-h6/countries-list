@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux'
 
 import product from './product'
-import counter from './counter'
 import countries from './country'
 import search from './search'
+import shopping from './shopping'
 
 const createRootReducer = () =>
   combineReducers({
     product,
-    counter,
     countries,
     search,
+    shopping,
   })
 
 export default createRootReducer
