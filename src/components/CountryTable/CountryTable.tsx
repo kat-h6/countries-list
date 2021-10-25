@@ -63,7 +63,7 @@ export default function CountryTable({
 }: CountryTableProps) {
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 800 }}>
+      <TableContainer sx={{ maxHeight: 'vh' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
