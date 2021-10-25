@@ -7,6 +7,9 @@ import TableHead from '@mui/material/TableHead'
 import TablePagination from '@mui/material/TablePagination'
 import TableRow from '@mui/material/TableRow'
 import TableCell from '@mui/material/TableCell'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
 
 import CountryRow from '../CountryRow/CountryRow'
 import { Languages, CountryTableProps, Column } from '../../types/country'
@@ -34,11 +37,13 @@ const columns: Column[] = [
     minWidth: 150,
     align: 'left',
     format: (value: Languages[]) => (
-      <ul>
+      <List>
         {value.map((l) => (
-          <li key={l.name}>{l.name}</li>
+          <ListItem disablePadding>
+            <ListItemText key={l.name} primary={l.name} />
+          </ListItem>
         ))}
-      </ul>
+      </List>
     ),
   },
   {
