@@ -33,6 +33,8 @@ export default function makeStore(initialState = initState) {
     }
   }
 
+  const savedState = localStorage.getItem('state')
+  if (savedState) initialState = JSON.parse(savedState)
   const store = createStore(
     createRootReducer(),
     initialState,

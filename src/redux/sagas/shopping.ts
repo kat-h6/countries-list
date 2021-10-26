@@ -1,9 +1,9 @@
 import { takeLatest, select } from 'redux-saga/effects'
-import { AddCountry } from '../../types/shopping'
 
-function* saveToLocalStorage(action: AddCountry): any {
+function* saveToLocalStorage(): any {
   const state = yield select()
+  console.log(state)
   yield localStorage.setItem('state', JSON.stringify(state))
 }
 
-export default [takeLatest(ADD_COUNTRY, saveToLocalStorage)]
+export default [takeLatest('*', saveToLocalStorage)]
