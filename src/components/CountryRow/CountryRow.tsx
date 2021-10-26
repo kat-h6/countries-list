@@ -16,7 +16,7 @@ export default function CountryRow({ columns, country }: CountryRowProps) {
         )
       })}
       <TableCell>
-        <ContainedButtons name={country.name} />
+        <ContainedButtons country={country} />
       </TableCell>
     </TableRow>
   )

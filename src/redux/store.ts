@@ -14,8 +14,7 @@ const initState: AppState = {
     countries: [],
     loading: false,
     error: '',
-  },
-  search: {
+    filteredCountries: [],
     keyword: '',
   },
   shopping: {

@@ -1,10 +1,12 @@
 import * as React from 'react'
+import { useSelector } from 'react-redux'
+import { AppState } from '../../types/types'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-// import Badge from '@mui/material/Badge'
+import Badge from '@mui/material/Badge'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -13,8 +15,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import MoreIcon from '@mui/icons-material/MoreVert'
 
 import SearchBar from '../SearchBar/SearchBar'
+import CartItems from '../CartItems'
 
 export default function PrimarySearchAppBar() {
+  const cartItems = useSelector((state: AppState) => state.shopping.inCart)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null)
@@ -56,8 +60,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <CartItems />
     </Menu>
   )
 
@@ -119,24 +122,16 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
               size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            ></IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            ></IconButton>
-            <IconButton
-              size="large"
               edge="end"
-              aria-label="account of current user"
+              aria-label="shopping cart"
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <ShoppingCartIcon />
+              <Badge badgeContent={cartItems.length} color="error">
+                <ShoppingCartIcon />
+              </Badge>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
