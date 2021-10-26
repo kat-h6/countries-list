@@ -11,8 +11,8 @@ import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 
-import CountryRow from '../CountryRow/CountryRow'
-import { Languages, CountryTableProps, Column } from '../../types/country'
+import CountryRow from './CountryRow'
+import { Languages, CountryTableProps, Column } from '../types/country'
 
 const columns: Column[] = [
   {
@@ -76,6 +76,7 @@ export default function CountryTable({
                   {column.label}
                 </TableCell>
               ))}
+              <TableCell>Details</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

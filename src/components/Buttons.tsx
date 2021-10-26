@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import { useDispatch } from 'react-redux'
+import StarIcon from '@mui/icons-material/Star'
 
-import './buttons.scss'
-import { addCountry } from '../../redux/actions/shopping'
-import { Country } from '../../types/country'
+import { addCountry } from '../redux/actions/shopping'
+import { Country } from '../types/country'
 
 type ContainedButtonsProps = {
   country: Country
@@ -19,22 +19,19 @@ export default function ContainedButtons({ country }: ContainedButtonsProps) {
   }
   return (
     <Stack direction="row" spacing={2}>
-      <Button
-        variant="contained"
-        size="small"
-        color="secondary"
-        className="btn btn--center"
-      >
-        <Link to={`/country/${country.name}`}>More info</Link>
-      </Button>
+      <Link style={{ textDecoration: 'none' }} to={`/country/${country.name}`}>
+        <Button variant="contained" size="small" color="primary">
+          More
+        </Button>
+      </Link>
       <Button
         onClick={() => handleClick(country)}
         variant="contained"
         size="small"
         color="secondary"
-        className="btn btn--center"
+        id="btn-star"
       >
-        Add
+        <StarIcon />
       </Button>
     </Stack>
   )

@@ -1,15 +1,14 @@
 import React from 'react'
-import { ThemeProvider } from '@mui/material/styles'
+import MuiThemeProvider from './components/ThemeProvider'
 
 import Routes from './Routes'
-import { customTheme } from './themes'
 
 export default function App() {
   return (
     <>
-      <ThemeProvider theme={customTheme}>
+      <MuiThemeProvider>
         <Routes />
-      </ThemeProvider>
+      </MuiThemeProvider>
     </>
   )
 }

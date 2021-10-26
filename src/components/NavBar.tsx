@@ -1,6 +1,7 @@
 import * as React from 'react'
+import { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { AppState } from '../../types/types'
+import { AppState } from '../types/types'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -9,15 +10,18 @@ import Typography from '@mui/material/Typography'
 import Badge from '@mui/material/Badge'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircle from '@mui/icons-material/AccountCircle'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import MoreIcon from '@mui/icons-material/MoreVert'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import StarIcon from '@mui/icons-material/Star'
 
-import SearchBar from '../SearchBar/SearchBar'
-import CartItems from '../CartItems'
+import SearchBar from './SearchBar'
+import CartItems from './CartItems'
+import { ThemeContext } from './ThemeProvider'
 
 export default function PrimarySearchAppBar() {
+  const setThemeName = useContext(ThemeContext)
   const cartItems = useSelector((state: AppState) => state.shopping.inCart)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
@@ -100,15 +104,6 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography
             variant="h6"
             noWrap
@@ -126,11 +121,37 @@ export default function PrimarySearchAppBar() {
               aria-label="shopping cart"
               aria-controls={menuId}
               aria-haspopup="true"
+              onClick={() => setThemeName('customTheme')}
+              color="inherit"
+            >
+              <LightModeIcon />
+            </IconButton>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="shopping cart"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={() => setThemeName('darkTheme')}
+              color="inherit"
+            >
+              <DarkModeIcon />
+            </IconButton>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="shopping cart"
+              aria-controls={menuId}
+              aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
               <Badge badgeContent={cartItems.length} color="error">
-                <ShoppingCartIcon />
+                <StarIcon />
               </Badge>
             </IconButton>
           </Box>
