@@ -15,6 +15,18 @@ export const customTheme = createTheme({
     },
   },
   typography: {
-    fontSize: 14,
+    fontSize: 16,
+    body2: {
+      fontSize: 14,
+    },
+  },
+  components: {
+    MuiListItemText: {
+      styleOverrides: {
+        primary: {
+          fontSize: 14,
+        },
+      },
+    },
   },
 })

@@ -14,6 +14,10 @@ import ListItemText from '@mui/material/ListItemText'
 import CountryRow from './CountryRow'
 import { Languages, CountryTableProps, Column } from '../types/country'
 
+const fontSize = {
+  fontSize: '0.3em',
+}
+
 const columns: Column[] = [
   {
     id: 'flag',
@@ -37,10 +41,10 @@ const columns: Column[] = [
     minWidth: 150,
     align: 'left',
     format: (value: Languages[]) => (
-      <List>
+      <List sx={{ ...fontSize }}>
         {value.map((l) => (
           <ListItem disablePadding>
-            <ListItemText sx={{ fontSize: 14 }} key={l.name} primary={l.name} />
+            <ListItemText key={l.name} primary={l.name} />
           </ListItem>
         ))}
       </List>
@@ -72,11 +76,14 @@ export default function CountryTable({
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
+                  sx={{ fontWeight: 'bold', fontSize: 16 }}
                 >
                   {column.label}
                 </TableCell>
               ))}
-              <TableCell>Details</TableCell>
+              <TableCell sx={{ fontWeight: 'bold', fontSize: 16 }}>
+                Details
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
