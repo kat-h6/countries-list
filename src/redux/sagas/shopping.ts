@@ -6,4 +6,6 @@ function* saveToLocalStorage(): any {
   yield localStorage.setItem('state', JSON.stringify(state))
 }
 
-export default [takeLatest('*', saveToLocalStorage)]
+const latest = [takeLatest('*', saveToLocalStorage)]
+
+export default latest
