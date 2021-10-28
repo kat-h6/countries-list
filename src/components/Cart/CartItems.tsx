@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { AppState } from '../../types/types'
 import DeleteIcon from '@mui/icons-material/Delete'
 import ListItem from '@mui/material/ListItem'
@@ -25,7 +26,9 @@ export default function CartItems() {
               onClick={() => handleRemoveCountry(item)}
             />
           </ListItemIcon>
-          <ListItemText>{item.name}</ListItemText>
+          <Link style={{ textDecoration: 'none' }} to={`/country/${item.name}`}>
+            <ListItemText>{item.name}</ListItemText>
+          </Link>
         </ListItem>
       ))}
     </>

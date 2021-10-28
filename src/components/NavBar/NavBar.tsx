@@ -10,10 +10,9 @@ import Typography from '@mui/material/Typography'
 import Badge from '@mui/material/Badge'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
-import AccountCircle from '@mui/icons-material/AccountCircle'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
+import ColorLensIcon from '@mui/icons-material/ColorLens'
 import StarIcon from '@mui/icons-material/Star'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
@@ -33,7 +32,6 @@ export default function PrimarySearchAppBar() {
   const [state, setState] = React.useState({
     right: false,
   })
-
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
 
@@ -52,6 +50,7 @@ export default function PrimarySearchAppBar() {
         setState({ ...state, [anchor]: open })
       }
 
+  // list of countries in cart
   const list = (anchor: Anchor) => (
     <Box
       sx={{ width: 250 }}
@@ -82,6 +81,22 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget)
   }
 
+  // handle choosing themes
+  const handleBlueTheme = () => {
+    setThemeName('blueTheme')
+    handleMenuClose()
+  }
+
+  const handleRedTheme = () => {
+    setThemeName('redTheme')
+    handleMenuClose()
+  }
+
+  const handleGreenTheme = () => {
+    setThemeName('greenTheme')
+    handleMenuClose()
+  }
+
   const menuId = 'primary-search-account-menu'
   const renderMenu = (
     <Menu
@@ -98,7 +113,11 @@ export default function PrimarySearchAppBar() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    ></Menu>
+    >
+      <MenuItem onClick={handleBlueTheme}>Blue Theme</MenuItem>
+      <MenuItem onClick={handleRedTheme}>Red Theme</MenuItem>
+      <MenuItem onClick={handleGreenTheme}>Green Theme</MenuItem>
+    </Menu>
   )
 
   const mobileMenuId = 'primary-search-account-menu-mobile'
@@ -119,16 +138,13 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+        <MenuItem onClick={() => setThemeName('blueTheme')}>
+          Blue Theme
+        </MenuItem>
+        <MenuItem onClick={() => setThemeName('redTheme')}>Red Theme</MenuItem>
+        <MenuItem onClick={() => setThemeName('greenTheme')}>
+          Green Theme
+        </MenuItem>
       </MenuItem>
     </Menu>
   )
@@ -154,10 +170,10 @@ export default function PrimarySearchAppBar() {
               aria-label="shopping cart"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={() => setThemeName('customTheme')}
+              onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <LightModeIcon />
+              <ColorLensIcon />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

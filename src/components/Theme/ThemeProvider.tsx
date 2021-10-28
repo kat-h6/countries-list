@@ -5,11 +5,15 @@ import { getThemeByName } from '../../themes/themes'
 export const ThemeContext = React.createContext((themeName: string): void => {})
 
 const MuiThemeProvider: React.FC = (props) => {
-  const curThemeName = localStorage.getItem('customTheme') || 'darkTheme'
+  const curThemeName =
+    localStorage.getItem('blueTheme') ||
+    'darkTheme' ||
+    'redTheme' ||
+    'greenTheme'
   const [themeName, _setThemeName] = useState(curThemeName)
   const theme = getThemeByName(themeName)
   const setThemeName = (themeName: string): void => {
-    localStorage.setItem('customTheme', themeName)
+    localStorage.setItem('blueTheme', themeName)
     _setThemeName(themeName)
   }
 
