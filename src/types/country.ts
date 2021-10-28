@@ -10,6 +10,7 @@ export type Languages = {
 export type Country = {
   flag: string
   name: string
+  capital?: string
   languages: Languages[]
   population: number
   region: string

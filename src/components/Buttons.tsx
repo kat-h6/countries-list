@@ -5,8 +5,8 @@ import Stack from '@mui/material/Stack'
 import { useDispatch } from 'react-redux'
 import StarIcon from '@mui/icons-material/Star'
 
-import { addCountry } from '../../redux/actions/shopping'
-import { Country } from '../../types/country'
+import { addCountry } from '../redux/actions/shopping'
+import { Country } from '../types/country'
 
 type ContainedButtonsProps = {
   country: Country

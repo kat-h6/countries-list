@@ -1,18 +1,14 @@
 import React, { useEffect, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-//import { Link } from 'react-router-dom'
 
 import { AppState } from '../types/types'
-//import { addProduct, removeProduct } from '../redux/actions'
 import { fetchData } from '../redux/actions/country'
 import CountryTable from '../components/Country/CountryTable'
-import Loading from '../components/Country/Loading'
+import Loading from '../components/Loading'
 import PrimarySearchAppBar from '../components/NavBar/NavBar'
-// import { Country } from '../types/country'
 
 export default function Home() {
   const dispatch = useDispatch()
-  //  const products = useSelector((state: AppState) => state.product.inCart)
   // prettier-ignore
   const countries = useSelector((state: AppState) =>
     state.countries.keyword
@@ -22,10 +18,6 @@ export default function Home() {
   const loading = useSelector((state: AppState) => state.countries.loading)
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(10)
-
-  /*  const handleAddCountry = () => {
-    dispatch(addProduct(product))
-  } */
 
   useEffect(() => {
     dispatch(fetchData())
@@ -46,20 +38,6 @@ export default function Home() {
   if (error) return <div>Error handling data!</div>
   return (
     <>
-      {/* {products.length <= 0 && <div>No products in cart</div>}
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            <Link to={`/products/${p.id}`}>{`${p.name} - $${p.price}`}</Link>
-
-            {'  '}
-
-            <button onClick={() => dispatch(removeProduct(p))}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleAddProduct}>Add product</button>
-        */}
       <PrimarySearchAppBar />
       {loading ? (
         <Loading />
