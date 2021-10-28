@@ -11,7 +11,7 @@ export const greenTheme = createTheme({
       contrastText: '#ffffff',
     },
     info: {
-      main: '#de5499',
+      main: '#301934',
     },
   },
   typography: {

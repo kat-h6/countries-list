@@ -7,11 +7,11 @@ export const redTheme = createTheme({
       contrastText: '#f2ebe9',
     },
     secondary: {
-      main: '#034078',
+      main: '#008ba7',
       contrastText: '#ffffff',
     },
     info: {
-      main: '#de5499',
+      main: '#001440',
     },
   },
   typography: {

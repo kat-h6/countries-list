@@ -11,7 +11,7 @@ export const blueTheme = createTheme({
       contrastText: '#ffffff',
     },
     info: {
-      main: '#de5499',
+      main: '#555d50',
     },
   },
   typography: {
