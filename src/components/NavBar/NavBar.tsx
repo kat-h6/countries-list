@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { AppState } from '../../types/types'
+import { Link } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -16,10 +16,12 @@ import ColorLensIcon from '@mui/icons-material/ColorLens'
 import StarIcon from '@mui/icons-material/Star'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
+import PublicIcon from '@mui/icons-material/Public'
 
 import SearchBar from './SearchBar'
 import CartItems from '../Cart/CartItems'
 import { ThemeContext } from '../Theme/ThemeProvider'
+import { AppState } from '../../types/types'
 
 type Anchor = 'right'
 
@@ -149,6 +151,26 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              mr: 1,
+              ml: -2,
+            }}
+          >
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="home"
+                aria-controls={menuId}
+                onClick={handleProfileMenuOpen}
+                color="secondary"
+              >
+                <PublicIcon />
+              </IconButton>
+            </Link>
+          </Box>
           <Typography
             variant="h6"
             noWrap
