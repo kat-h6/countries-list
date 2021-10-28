@@ -5,7 +5,6 @@ import { AppState } from '../../types/types'
 import DeleteIcon from '@mui/icons-material/Delete'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
 
 import { Country } from '../../types/country'
 import { removeCountry } from '../../redux/actions/shopping'
@@ -27,7 +26,7 @@ export default function CartItems() {
             />
           </ListItemIcon>
           <Link style={{ textDecoration: 'none' }} to={`/country/${item.name}`}>
-            <ListItemText>{item.name}</ListItemText>
+            {item.name}
           </Link>
         </ListItem>
       ))}

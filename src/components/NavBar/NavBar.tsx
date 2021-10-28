@@ -138,13 +138,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem onClick={handleProfileMenuOpen}>
-        <MenuItem onClick={() => setThemeName('blueTheme')}>
-          Blue Theme
-        </MenuItem>
-        <MenuItem onClick={() => setThemeName('redTheme')}>Red Theme</MenuItem>
-        <MenuItem onClick={() => setThemeName('greenTheme')}>
-          Green Theme
-        </MenuItem>
+        <MenuItem onClick={handleBlueTheme}>Blue Theme</MenuItem>
+        <MenuItem onClick={handleRedTheme}>Red Theme</MenuItem>
+        <MenuItem onClick={handleGreenTheme}>Green Theme</MenuItem>
       </MenuItem>
     </Menu>
   )
