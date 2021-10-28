@@ -31,7 +31,7 @@ const columns: Column[] = [
   {
     id: 'population',
     label: 'Population',
-    minWidth: 150,
+    minWidth: 180,
     align: 'left',
     format: (value: number) => value.toLocaleString('en-US'),
   },

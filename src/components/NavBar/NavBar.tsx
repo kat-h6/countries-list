@@ -15,10 +15,14 @@ import MoreIcon from '@mui/icons-material/MoreVert'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import StarIcon from '@mui/icons-material/Star'
+import Drawer from '@mui/material/Drawer'
+import List from '@mui/material/List'
 
 import SearchBar from './SearchBar'
 import CartItems from '../Cart/CartItems'
 import { ThemeContext } from '../Theme/ThemeProvider'
+
+type Anchor = 'right'
 
 export default function PrimarySearchAppBar() {
   const setThemeName = useContext(ThemeContext)
@@ -26,9 +30,40 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null)
+  const [state, setState] = React.useState({
+    right: false,
+  })
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
+
+  // prettier-ignore
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
+      (event: React.KeyboardEvent | React.MouseEvent) => {
+        if (
+          event.type === 'keydown' &&
+          ((event as React.KeyboardEvent).key === 'Tab' ||
+            (event as React.KeyboardEvent).key === 'Shift')
+        ) {
+          return
+        }
+
+        setState({ ...state, [anchor]: open })
+      }
+
+  const list = (anchor: Anchor) => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <CartItems />
+      </List>
+    </Box>
+  )
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
@@ -63,9 +98,7 @@ export default function PrimarySearchAppBar() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-      <CartItems />
-    </Menu>
+    ></Menu>
   )
 
   const mobileMenuId = 'primary-search-account-menu-mobile'
@@ -131,7 +164,7 @@ export default function PrimarySearchAppBar() {
             <IconButton
               size="large"
               edge="end"
-              aria-label="shopping cart"
+              aria-label="dark-mode"
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={() => setThemeName('darkTheme')}
@@ -144,15 +177,23 @@ export default function PrimarySearchAppBar() {
             <IconButton
               size="large"
               edge="end"
-              aria-label="shopping cart"
+              aria-label="country starred"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Badge badgeContent={cartItems.length} color="error">
-                <StarIcon />
-              </Badge>
+              <React.Fragment>
+                <Badge badgeContent={cartItems.length} color="error">
+                  <StarIcon onClick={toggleDrawer('right', true)} />
+                  <Drawer
+                    anchor="right"
+                    open={state['right']}
+                    onClose={toggleDrawer('right', false)}
+                  >
+                    {list('right')}
+                  </Drawer>
+                </Badge>
+              </React.Fragment>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
