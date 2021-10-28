@@ -9,6 +9,7 @@ export const blueTheme = createTheme({
     secondary: {
       main: '#D9B310',
       contrastText: '#ffffff',
+      light: '#f2ebe9',
     },
     info: {
       main: '#555d50',

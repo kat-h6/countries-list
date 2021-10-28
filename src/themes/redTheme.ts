@@ -9,6 +9,7 @@ export const redTheme = createTheme({
     secondary: {
       main: '#008ba7',
       contrastText: '#ffffff',
+      light: '#f2ebe9',
     },
     info: {
       main: '#001440',

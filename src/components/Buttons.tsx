@@ -30,8 +30,6 @@ export default function ContainedButtons({ country }: ContainedButtonsProps) {
     }
   }
 
-  let color = existsInCart(country) ? 'info' : 'secondary'
-
   return (
     <Stack direction="row" spacing={2}>
       <Link style={{ textDecoration: 'none' }} to={`/country/${country.name}`}>
@@ -43,7 +41,7 @@ export default function ContainedButtons({ country }: ContainedButtonsProps) {
         onClick={() => handleClick(country)}
         variant="contained"
         size="small"
-        color={color}
+        color={existsInCart(country) ? 'info' : 'secondary'}
         id="btn-star"
       >
         <StarIcon />

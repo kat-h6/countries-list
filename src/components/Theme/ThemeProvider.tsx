@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ThemeProvider } from '@mui/material'
+
 import { getThemeByName } from '../../themes/themes'
 
 export const ThemeContext = React.createContext((themeName: string): void => {})
