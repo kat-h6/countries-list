@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { AppState } from '../types/types'
+import { AppState } from '../../types/types'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -17,8 +17,8 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 import StarIcon from '@mui/icons-material/Star'
 
 import SearchBar from './SearchBar'
-import CartItems from './CartItems'
-import { ThemeContext } from './ThemeProvider'
+import CartItems from '../Cart/CartItems'
+import { ThemeContext } from '../Theme/ThemeProvider'
 
 export default function PrimarySearchAppBar() {
   const setThemeName = useContext(ThemeContext)

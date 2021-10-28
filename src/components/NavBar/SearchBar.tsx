@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import { styled, alpha } from '@mui/material/styles'
 import InputBase from '@mui/material/InputBase'
 import { useDispatch } from 'react-redux'
-import { filterCountries } from '../redux/actions/country'
+import { filterCountries } from '../../redux/actions/country'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',

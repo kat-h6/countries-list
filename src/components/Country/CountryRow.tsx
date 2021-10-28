@@ -3,7 +3,7 @@ import { TableCell } from '@mui/material'
 import TableRow from '@mui/material/TableRow'
 
 import CountryTableCell from './CountryTableCell'
-import { CountryRowProps } from '../types/country'
+import { CountryRowProps } from '../../types/country'
 import ContainedButtons from './Buttons'
 
 export default function CountryRow({ columns, country }: CountryRowProps) {

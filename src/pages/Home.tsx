@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { AppState } from '../types/types'
 //import { addProduct, removeProduct } from '../redux/actions'
 import { fetchData } from '../redux/actions/country'
-import CountryTable from '../components/CountryTable'
-import Loading from '../components/Loading'
-import PrimarySearchAppBar from '../components/NavBar'
+import CountryTable from '../components/Country/CountryTable'
+import Loading from '../components/Country/Loading'
+import PrimarySearchAppBar from '../components/NavBar/NavBar'
 // import { Country } from '../types/country'
 
 export default function Home() {
