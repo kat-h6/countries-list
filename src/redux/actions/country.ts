@@ -47,7 +47,7 @@ export function filterCountries(keyword: string): FilterCountries {
 }
 
 export function fetchData() {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<any>) => {
     dispatch(fetchCountriesRequest)
     fetch('https://restcountries.com/v2/all')
       .then((res) => res.json())
