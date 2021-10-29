@@ -163,8 +163,6 @@ export default function PrimarySearchAppBar() {
                 size="large"
                 edge="end"
                 aria-label="home"
-                aria-controls={menuId}
-                onClick={handleProfileMenuOpen}
                 color="secondary"
               >
                 <PublicIcon />
