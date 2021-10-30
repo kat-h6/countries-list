@@ -42,6 +42,12 @@ export type FilterCountries = {
   }
 }
 
+export type CountryActions =
+  | FilterCountries
+  | FetchCountriesFailure
+  | FetchCountriesSuccess
+  | FetchCountriesRequest
+
 export type CountryState = {
   countries: Country[]
   loading: boolean

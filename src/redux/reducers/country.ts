@@ -1,13 +1,10 @@
 import {
   CountryState,
-  FetchCountriesRequest,
   FETCH_COUNTRIES_REQUEST,
-  FetchCountriesSuccess,
   FETCH_COUNTRIES_SUCCESS,
-  FetchCountriesFailure,
   FETCH_COUNTRIES_FAILURE,
   FILTER_COUNTRIES,
-  FilterCountries,
+  CountryActions,
 } from '../../types/country'
 
 const initialState: CountryState = {
@@ -20,7 +17,7 @@ const initialState: CountryState = {
 // prettier-ignore
 export default function countries(
   state = initialState,
-  action: FetchCountriesRequest | FetchCountriesFailure | FetchCountriesSuccess | FilterCountries
+  action: CountryActions
 ) {
   switch (action.type) {
   case FETCH_COUNTRIES_REQUEST: 
