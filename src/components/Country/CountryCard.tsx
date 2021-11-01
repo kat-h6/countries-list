@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -19,6 +19,11 @@ export default function CountryCard({ country }: { country: Country }) {
   const dispatch = useDispatch()
   const handleClick = (country: Country) => {
     dispatch(addCountry(country))
+  }
+
+  let history = useHistory()
+  function handleBackClick() {
+    history.push('/')
   }
 
   return (
@@ -52,10 +57,8 @@ export default function CountryCard({ country }: { country: Country }) {
           >
             <StarIcon color="secondary" />
           </IconButton>
-          <Button sx={{ marginLeft: 'auto' }}>
-            <Link style={{ textDecoration: 'none' }} to="/">
-              Back
-            </Link>
+          <Button sx={{ marginLeft: 'auto' }} onClick={handleBackClick}>
+            Back
           </Button>
         </CardActions>
       </Card>
