@@ -10,5 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Redux-thunk
 * Redux-saga
 * React-router
-* 
-![Uploading Screen Shot 2022-02-27 at 3.16.53 PM.png…]()
+
+
+
+<img width="1404" alt="Screen Shot 2022-02-27 at 3 18 08 PM" src="https://user-images.githubusercontent.com/71629262/155884028-02249cad-bac1-4824-a1aa-912cc3aa5574.png">
